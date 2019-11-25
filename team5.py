@@ -18,26 +18,23 @@ def move(my_history, their_history, my_score, their_score):
     Returns 'c' or 'b'. 
     '''
 
-    
     if len(my_history) == 0:
         return 'c'
-   
-  
+    
     if  'b'and 'b' == their_history[-2: -1]:
      return 'b' 
-    else:
-       return 'c'
-
-    if their_history[-2:] == ['b' ,'b']:
-       return 'b'
+    
+    if their_history[-2:] == ['b' , 'b']:
+        return 'b'
+    
+    if my_score < -100:
+        return 'b'
+    
+    
+    if their_score > 0:
+        return 'b'
     else:
         return 'c'
-    
-    
-    if len(my_history) >100:
-        return 'b'               
-    else:
-       return 'c'        
     
  
 def test_move(my_history, their_history, my_score, their_score, result):
